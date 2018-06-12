@@ -39,12 +39,12 @@ Alguns comandos básicos do git incluem:
  `git push origin master` (NÃO FAÇA ISSO SEM AVISAR ALGUÉM ANTES, PLZ. VAMOS TORNAR O MUNDO MELHOR)
 
 
-## Progresso (Abaixo será listado as funcionalidades, o nome de quem está trabalhando e se a task está terminada)
-Para editar o progresso do projeto, a vossa excelência deverá abrir o arquivo README.MD, vir até aqui e adicionar um x no campo em questão —----->
 
-
-### Exemplo de demonstração do progresso
-- [ ] Classe de usuário (Jon is Working...) —— Alguém já está fazendo está função
-- [ ] Classe dos dogs —— Task em aberto ainda, ninguém está cuidando
-- [X] Classe sem classe —— Task já está terminada
+### TO DO:
+- [ ] Funçoes de Edicao - Danilo;
+- [ ] Funcoes de Criação - Renan;
+- [ ] Funcoes de Read - Lucas;
+- [ ] Funcoes de Deleção - Rodrigo;
+- [ ] Interface - Rodrigo;
+- [ ] Consultas elaboradas - ;
 ...

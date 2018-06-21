@@ -4,6 +4,7 @@ package bd_test;
 import java.sql.*;
 
 
+
 public class DB_Connection {
     public static  Connection connect(){
     Connection c = null;
@@ -23,4 +24,6 @@ public class DB_Connection {
     System.out.println("CONEXAO COMPLETA");
     return c;
     }  
-}
+
+
+

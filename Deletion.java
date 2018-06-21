@@ -43,13 +43,7 @@ public class Deletion {
                     
         } finally{
             try{
-                stmt = conn.createStatement();
-                rs = stmt.executeQuery("SELECT * FROM LISTA_FORMANDOS");
-                while (rs.next()) {
-                    System.out.println(rs.getDate("DATA_FORMATURA") + "-"
-                            + rs.getString("NOME_FORMANDO")                            
-                            );
-                }
+                
                 
                 
                 pstmt.close();
@@ -100,13 +94,7 @@ public class Deletion {
                     
         } finally{
             try{
-                stmt = conn.createStatement();
-                rs = stmt.executeQuery("SELECT * FROM PARANINFO_FORMATURA");
-                while (rs.next()) {
-                    System.out.println(rs.getDate("DATA_FORMATURA") + "-"
-                            + rs.getString("PARANINFO")                            
-                            );
-                }
+                
                 
                 
                 pstmt.close();
@@ -152,13 +140,7 @@ public class Deletion {
                     
         } finally{
             try{
-                stmt = conn.createStatement();
-                rs = stmt.executeQuery("SELECT * FROM PARANINFO");
-                while (rs.next()) {
-                    System.out.println(rs.getString("NOME") + "-"
-                            + rs.getString("TELEFONE")                            
-                            );
-                }
+               
                 
                 
                 pstmt.close();
@@ -206,13 +188,7 @@ public class Deletion {
                     
         } finally{
             try{
-                stmt = conn.createStatement();
-                rs = stmt.executeQuery("SELECT * FROM FORMATURA_TEM_ATREXTRA");
-                while (rs.next()) {
-                    System.out.println(rs.getDate("DATA_FORMATURA") + "-"
-                            + rs.getString("ATREXTRA")                            
-                            );
-                }
+                
                 
                 
                 pstmt.close();
@@ -259,13 +235,7 @@ public class Deletion {
                     
         } finally{
             try{
-                stmt = conn.createStatement();
-                rs = stmt.executeQuery("SELECT * FROM DECORA");
-                while (rs.next()) {
-                    System.out.println(rs.getDate("DATA_EVENTO") + "-"
-                            + rs.getString("DECORADORA")                            
-                            );
-                }
+                
                 
                 
                 pstmt.close();
@@ -316,15 +286,7 @@ public class Deletion {
                     
         } finally{
             try{
-                stmt = conn.createStatement();
-                rs = stmt.executeQuery("SELECT * FROM BANDA_SE_APRESENTA");
-                while (rs.next()) {
-                    System.out.println(rs.getDate("DATA_EVENTO") + "-"
-                            + rs.getString("BANDA") + "-"
-                            + rs.getDate("HORA_INI") + "-"
-                            + rs.getDate("HORA_FIM")                            
-                            );
-                }
+               
                 
                 
                 pstmt.close();
@@ -370,16 +332,7 @@ public class Deletion {
                     
         } finally{
             try{
-                stmt = conn.createStatement();
-                rs = stmt.executeQuery("SELECT * FROM FORMATURA");
-                while (rs.next()) {
-                    System.out.println(rs.getDate("DATA") + "-"
-                            + rs.getString("ESCOLA") + "-"
-                            + rs.getString("NOME_CERIMONIALISTA_MISSA") + "-"
-                            + rs.getInt("NRO_CONVIDADOS") + "-"
-                            + rs.getDate("DATA_COLACAO")
-                            );
-                }
+                
                 
                 
                 pstmt.close();
@@ -423,16 +376,7 @@ public class Deletion {
                     
         } finally{
             try{
-                stmt = conn.createStatement();
-                rs = stmt.executeQuery("SELECT * FROM EVENTO");
-                while (rs.next()) {
-                    System.out.println(rs.getDate("DATA") + "-"
-                            + rs.getString("FOTOGRAFIA") + "-"
-                            + rs.getInt("NRO_CASA_FESTAS") + "-"
-                            + rs.getString("CEP_CASA_FESTAS") + "-"
-                            + rs.getString("TIPO")
-                            );
-                }
+                
                 
                 
                 pstmt.close();
@@ -474,14 +418,7 @@ public class Deletion {
                     
         } finally{
             try{
-                stmt = conn.createStatement();
-                rs = stmt.executeQuery("SELECT * FROM TELEFONES_DECORADORA");
-                while (rs.next()) {
-                    System.out.println(rs.getString("DEC") + "-"
-                            //+ rs.getString("NOME") + "-"
-                            + rs.getString("TELEFONE")
-                            );
-                }
+                
                 
                 
                 pstmt.close();
@@ -523,14 +460,7 @@ public class Deletion {
                     
         } finally{
             try{
-                stmt = conn.createStatement();
-                rs = stmt.executeQuery("SELECT * FROM EMAILS_DECORADORA");
-                while (rs.next()) {
-                    System.out.println(rs.getString("DEC") + "-"
-                            //+ rs.getString("NOME") + "-"
-                            + rs.getString("EMAIL")
-                            );
-                }
+                
                 
                 
                 pstmt.close();
@@ -572,14 +502,7 @@ public class Deletion {
                     
         } finally{
             try{
-                stmt = conn.createStatement();
-                rs = stmt.executeQuery("SELECT * FROM TELEFONES_FOTOGRAFIA");
-                while (rs.next()) {
-                    System.out.println(rs.getString("FOTGRF") + "-"
-                            //+ rs.getString("NOME") + "-"
-                            + rs.getString("TELEFONE")
-                            );
-                }
+                
                 
                 
                 pstmt.close();
@@ -621,14 +544,7 @@ public class Deletion {
                     
         } finally{
             try{
-                stmt = conn.createStatement();
-                rs = stmt.executeQuery("SELECT * FROM EMAILS_FOTOGRAFIA");
-                while (rs.next()) {
-                    System.out.println(rs.getString("FOTGRF") + "-"
-                            //+ rs.getString("NOME") + "-"
-                            + rs.getString("EMAIL")
-                            );
-                }
+                
                 
                 
                 pstmt.close();
@@ -670,14 +586,7 @@ public class Deletion {
                     
         } finally{
             try{
-                stmt = conn.createStatement();
-                rs = stmt.executeQuery("SELECT * FROM ESTILOS_BANDA");
-                while (rs.next()) {
-                    System.out.println(rs.getString("BANDA") + "-"
-                            //+ rs.getString("NOME") + "-"
-                            + rs.getString("ESTILO")
-                            );
-                }
+               
                 
                 
                 pstmt.close();
@@ -719,14 +628,7 @@ public class Deletion {
                     
         } finally{
             try{
-                stmt = conn.createStatement();
-                rs = stmt.executeQuery("SELECT * FROM INTEGRANTES_BANDA");
-                while (rs.next()) {
-                    System.out.println(rs.getString("BANDA") + "-"
-                            //+ rs.getString("NOME") + "-"
-                            + rs.getString("NOME_INTEGRANTE")
-                            );
-                }
+                
                 
                 
                 pstmt.close();
@@ -768,14 +670,7 @@ public class Deletion {
                     
         } finally{
             try{
-                stmt = conn.createStatement();
-                rs = stmt.executeQuery("SELECT * FROM EMAILS_BANDA");
-                while (rs.next()) {
-                    System.out.println(rs.getString("BANDA") + "-"
-                            //+ rs.getString("NOME") + "-"
-                            + rs.getString("EMAIL")
-                            );
-                }
+                
                 
                 
                 pstmt.close();
@@ -817,14 +712,7 @@ public class Deletion {
                     
         } finally{
             try{
-                stmt = conn.createStatement();
-                rs = stmt.executeQuery("SELECT * FROM TELEFONES_BANDA");
-                while (rs.next()) {
-                    System.out.println(rs.getString("BANDA") + "-"
-                            //+ rs.getString("NOME") + "-"
-                            + rs.getString("TELEFONE")
-                            );
-                }
+                
                 
                 
                 pstmt.close();
@@ -865,14 +753,7 @@ public class Deletion {
                     
         } finally{
             try{
-                stmt = conn.createStatement();
-                rs = stmt.executeQuery("SELECT * FROM DECORADORA");
-                while (rs.next()) {
-                    System.out.println(rs.getString("CNPJ") + "-"
-                            + rs.getString("NOME") + "-"
-                            + rs.getString("DESCRICAO")
-                            );
-                }
+                
                 
                 
                 pstmt.close();
@@ -916,19 +797,7 @@ public class Deletion {
                     
         } finally{
             try{
-                stmt = conn.createStatement();
-                rs = stmt.executeQuery("SELECT * FROM CASA_FESTAS");
-                while (rs.next()) {
-                    System.out.println(rs.getString("CEP") + "-"
-                            + rs.getInt("NRO") + "-"
-                            + rs.getString("NOME") + "-"
-                            + rs.getString("RUA") + "-"
-                            + rs.getString("COMPLEMENTO") + "-"
-                            + rs.getString("BAIRRO") + "-"
-                            + rs.getString("CIDADE") + "-"
-                            + rs.getInt("LOTACAO")
-                            );
-                }
+                
                 
                 
                 pstmt.close();
@@ -967,15 +836,7 @@ public class Deletion {
                     
         } finally{
             try{
-                stmt = conn.createStatement();
-                rs = stmt.executeQuery("SELECT * FROM FOTOGRAFIA");
-                while (rs.next()) {
-                    System.out.println(rs.getString("CNPJ") + "-"
-                            + rs.getInt("NRO_FOTOGRAFOS") + "-"
-                            + rs.getString("NOME_EQUIPE") + "-"
-                            + rs.getString("TIPO")
-                            );
-                }
+                
                 
                 
                 pstmt.close();
@@ -1013,13 +874,7 @@ public class Deletion {
                     
         } finally{
             try{
-                stmt = conn.createStatement();
-                rs = stmt.executeQuery("SELECT * FROM BANDA");
-                while (rs.next()) {
-                    System.out.println(rs.getString("CPF_LIDER") + "-"
-                            + rs.getString("NOME")
-                            );
-                }
+                
                 
                 
                 pstmt.close();
@@ -1060,16 +915,7 @@ public class Deletion {
                     
         } finally{
             try{
-                stmt = conn.createStatement();
-                rs = stmt.executeQuery("SELECT * FROM ATRACAO_EXTRA");
-                while (rs.next()) {
-                    System.out.println(rs.getString("CNPJ") + "-"
-                            + rs.getString("NOME")+ "-"
-                            + rs.getString("TELEFONE") + "-"
-                            + rs.getString("EMAIL") + "-"
-                            + rs.getString("DESCRICAO")
-                            );
-                }
+                
                 
                 
                 pstmt.close();
@@ -1111,16 +957,6 @@ public class Deletion {
         } finally{
             try{
                 
-                stmt = conn.createStatement();
-                rs = stmt.executeQuery("SELECT * FROM ESCOLA");
-                while (rs.next()) {
-                    System.out.println(rs.getString("NOME") + "-"
-                            + rs.getString("TELEFONE")+ "-"
-                            + rs.getString("EMAIL") + "-"
-                            + rs.getString("TELEFONE_COMISSAO") + "-"
-                            + rs.getString("EMAIL_COMISSAO")
-                            );
-                }
                 
                 //encerramento do metodo
                 pstmt.close();

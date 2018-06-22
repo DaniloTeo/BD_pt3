@@ -41,7 +41,7 @@ public class Menu {
     }
     
     
-    public static void menuCriacao() throws IOException{
+    public static void menuCriacao() throws IOException, SQLException{
         String table;
         printTables();
         table = EntradaTeclado.leString();
@@ -650,7 +650,7 @@ public class Menu {
         String ord;
         boolean tipo_ord;
         String aux;
-        String att;
+        String att = null;
         String table = EntradaTeclado.leString();
         
         
@@ -699,67 +699,527 @@ public class Menu {
                     break;
                     
                 case "Escola":
+                    System.out.println("NOME-TELEFONE-EMAIL-TELEFONE_COMISSAO-EMAIL_COMISSAO");
                     
+                    rs = selectFunctions.escolaAll(stmt, conn);
+                    while (rs.next()) {
+                    System.out.println(rs.getString("NOME") + "-"
+                            + rs.getString("TELEFONE")+ "-"
+                            + rs.getString("EMAIL") + "-"
+                            + rs.getString("TELEFONE_COMISSAO") + "-"
+                            + rs.getString("EMAIL_COMISSAO")
+                            );
+		    }
+                    
+                    System.out.println("Deseja ordenar? (S/N)");
+                    ord = EntradaTeclado.leString();
+                    if(ord.equals("S")){
+                        
+                    //System.out.println("Deseja ordenar por 'Nome'?");
+                        //att = EntradaTeclado.leString();
+                        
+                        System.out.println("Crescente 'C' ou Decrescente 'D'?");
+                        aux = EntradaTeclado.leString();
+                        
+                        if(aux.equals("C")) tipo_ord = true;
+                        else tipo_ord = false;
+                        
+                        rs = selectFunctions.chooseSelectionOrder(stmt, conn, table, tipo_ord, att);
+                    System.out.println("NOME-TELEFONE-EMAIL-TELEFONE_COMISSAO-EMAIL_COMISSAO");
+                    while (rs.next()) {
+			System.out.println(rs.getString("NOME") + "-"
+                            + rs.getString("TELEFONE")+ "-"
+                            + rs.getString("EMAIL") + "-"
+                            + rs.getString("TELEFONE_COMISSAO") + "-"
+                            + rs.getString("EMAIL_COMISSAO")
+                        );
+		    }
+                        
+                    }
                     break;
                     
                 case "AtracaoExtra":
+                    System.out.println("CNPJ-NOME-TELEFONE-EMAIL-DESCRICAO");
                     
-                    break;
+                    rs = selectFunctions.atracaoExtraAll(stmt, conn);
+                    while (rs.next()) {
+                    System.out.println(rs.getString("CNPJ") + "-"
+                            + rs.getString("NOME")+ "-"
+                            + rs.getString("TELEFONE") + "-"
+                            + rs.getString("EMAIL") + "-"
+                            + rs.getString("DESCRICAO")
+                            );
+		    }
+                    
+                    System.out.println("Deseja ordenar? (S/N)");
+                    ord = EntradaTeclado.leString();
+                    if(ord.equals("S")){
+                        
+                    System.out.println("Deseja ordenar por 'Nome' ou 'CNPJ'?");
+                        att = EntradaTeclado.leString();
+                        
+                        System.out.println("Crescente 'C' ou Decrescente 'D'?");
+                        aux = EntradaTeclado.leString();
+                        
+                        if(aux.equals("C")) tipo_ord = true;
+                        else tipo_ord = false;
+                        
+                        rs = selectFunctions.chooseSelectionOrder(stmt, conn, table, tipo_ord, att);
+                    System.out.println("CNPJ-NOME-TELEFONE-EMAIL-DESCRICAO");
+                    System.out.println(rs.getString("CNPJ") + "-"
+                            + rs.getString("NOME")+ "-"
+                            + rs.getString("TELEFONE") + "-"
+                            + rs.getString("EMAIL") + "-"
+                            + rs.getString("DESCRICAO")
+                            );
+		    }
+		    break;
                     
                 case "FPossuiAExtra":
+                    System.out.println("DATA FORMATURA-ATREXTRA");
                     
+                    rs = selectFunctions.formaturaTemAtrextraAll(stmt, conn);
+                    while (rs.next()) {
+                    System.out.println(rs.getDate("DATA_FORMATURA") + "-"
+                            + rs.getString("ATREXTRA")                            
+                            );
+		    }
+                    
+                    System.out.println("Deseja ordenar? (S/N)");
+                    ord = EntradaTeclado.leString();
+                    if(ord.equals("S")){
+                        
+                    System.out.println("Deseja ordenar por 'AtracaoExtra' ou 'Formatura'?");
+                        att = EntradaTeclado.leString();
+                        
+                        System.out.println("Crescente 'C' ou Decrescente 'D'?");
+                        aux = EntradaTeclado.leString();
+                        
+                        if(aux.equals("C")) tipo_ord = true;
+                        else tipo_ord = false;
+                        
+		    rs = selectFunctions.chooseSelectionOrder(stmt, conn, table, tipo_ord, att);
+		    System.out.println("DATA FORMATURA-ATREXTRA");
+		    while (rs.next()) {
+		        System.out.println(rs.getDate("DATA_FORMATURA") + "-"
+			           + rs.getString("ATREXTRA")                            
+		        );
+		    }
+		    }
                     break;
                    
-                case "Paraninfo":
-                   
-                    break;
-                    
                 case "ParaninfosFormatura":
+		    System.out.println("DATA FORMATURA-PARANINFO");
+                    
+                    rs = selectFunctions.paraninfoFormaturaAll(stmt, conn);
+                    while (rs.next()) {
+                    System.out.println(rs.getDate("DATA_FORMATURA") + "-"
+                            + rs.getString("PARANINFO")                            
+                            );
+		    }
+                    
+                    System.out.println("Deseja ordenar? (S/N)");
+                    ord = EntradaTeclado.leString();
+                    if(ord.equals("S")){
+                        
+                    System.out.println("Deseja ordenar por 'Formatura' ou 'Paraninfo'?");
+                        att = EntradaTeclado.leString();
+                        
+                        System.out.println("Crescente 'C' ou Decrescente 'D'?");
+                        aux = EntradaTeclado.leString();
+                        
+                        if(aux.equals("C")) tipo_ord = true;
+                        else tipo_ord = false;
+                        
+		    rs = selectFunctions.chooseSelectionOrder(stmt, conn, table, tipo_ord, att);
+		    System.out.println("DATA FORMATURA-PARANINFO");
+		    while (rs.next()) {
+                    System.out.println(rs.getDate("DATA_FORMATURA") + "-"
+                            + rs.getString("PARANINFO")                            
+                            );
+		    }
+		    }
+                    break;
+                    
+                case "Paraninfos":
                    
                     break;
                     
                 case "ListaFormandos":
+                    System.out.println("DATA FORMATURA-NOME FORMANDO");
                     
+                    rs = selectFunctions.paraninfoFormaturaAll(stmt, conn);
+                    while (rs.next()) {
+                    System.out.println(rs.getDate("DATA_FORMATURA") + "-"
+                            + rs.getString("NOME_FORMANDO")                            
+                            );
+		    }
+                    
+                    System.out.println("Deseja ordenar? (S/N)");
+                    ord = EntradaTeclado.leString();
+                    if(ord.equals("S")){
+                        
+                    System.out.println("Deseja ordenar por 'Formatura' ou 'Formando'?");
+                        att = EntradaTeclado.leString();
+                        
+                        System.out.println("Crescente 'C' ou Decrescente 'D'?");
+                        aux = EntradaTeclado.leString();
+                        
+                        if(aux.equals("C")) tipo_ord = true;
+                        else tipo_ord = false;
+                        
+		    rs = selectFunctions.chooseSelectionOrder(stmt, conn, table, tipo_ord, att);
+		    System.out.println("DATA FORMATURA-NOME_FORMANDO");
+		    while (rs.next()) {
+                    System.out.println(rs.getDate("DATA_FORMATURA") + "-"
+                            + rs.getString("NOME_FORMANDO")                            
+                            );
+		    }
+		    }
                     break;
                    
                 case "Banda":
-                   
+		    System.out.println("CPF LIDER-NOME");
+                    
+                    rs = selectFunctions.bandaAll(stmt, conn);
+                    while (rs.next()) {
+                    System.out.println(rs.getString("CPF_LIDER") + "-"
+                            + rs.getString("NOME")
+                            );
+		    }
+                    
+                    System.out.println("Deseja ordenar? (S/N)");
+                    ord = EntradaTeclado.leString();
+                    if(ord.equals("S")){
+                        
+                    System.out.println("Deseja ordenar por 'CPF-lider' ou 'NomeBanda'?");
+                        att = EntradaTeclado.leString();
+                        
+                        System.out.println("Crescente 'C' ou Decrescente 'D'?");
+                        aux = EntradaTeclado.leString();
+                        
+                        if(aux.equals("C")) tipo_ord = true;
+                        else tipo_ord = false;
+                        
+		    rs = selectFunctions.chooseSelectionOrder(stmt, conn, table, tipo_ord, att);
+		    System.out.println("CPF LIDER-NOME");
+		    while (rs.next()) {
+                    System.out.println(rs.getString("CPF_LIDER") + "-"
+                            + rs.getString("NOME")
+                            );
+		    }
+		    }
                     break;
                    
                 case "EstiloBanda": 
+                    System.out.println("BANDA-ESTILO");
                     
+                    rs = selectFunctions.estilosBandaAll(stmt, conn);
+                    while (rs.next()) {
+                    System.out.println(rs.getString("BANDA") + "-"
+                            + rs.getString("ESTILO")
+                            );
+		    }
+                    
+                    System.out.println("Deseja ordenar? (S/N)");
+                    ord = EntradaTeclado.leString();
+                    if(ord.equals("S")){
+                        
+                    System.out.println("Deseja ordenar por 'Banda' ou 'Estilo'?");
+                        att = EntradaTeclado.leString();
+                        
+                        System.out.println("Crescente 'C' ou Decrescente 'D'?");
+                        aux = EntradaTeclado.leString();
+                        
+                        if(aux.equals("C")) tipo_ord = true;
+                        else tipo_ord = false;
+                        
+		    rs = selectFunctions.chooseSelectionOrder(stmt, conn, table, tipo_ord, att);
+		    System.out.println("BANDA-ESTILO");
+                    while (rs.next()) {
+                    System.out.println(rs.getString("BANDA") + "-"
+                            + rs.getString("ESTILO")
+                            );
+		    }
+		    }
                     break;
                     
                 case "IntegrantesBanda":
+                    System.out.println("BANDA-NOME INTEGRANTE");
                     
+                    rs = selectFunctions.integrantesBandaAll(stmt, conn);
+                    while (rs.next()) {
+                    System.out.println(rs.getString("BANDA") + "-"
+                            + rs.getString("NOME_INTEGRANTE")
+                            );
+		    }
+                    
+                    System.out.println("Deseja ordenar? (S/N)");
+                    ord = EntradaTeclado.leString();
+                    if(ord.equals("S")){
+                        
+                    System.out.println("Deseja ordenar por 'Banda' ou 'Integrantes'?");
+                        att = EntradaTeclado.leString();
+                        
+                        System.out.println("Crescente 'C' ou Decrescente 'D'?");
+                        aux = EntradaTeclado.leString();
+                        
+                        if(aux.equals("C")) tipo_ord = true;
+                        else tipo_ord = false;
+                        
+		    rs = selectFunctions.chooseSelectionOrder(stmt, conn, table, tipo_ord, att);
+		    System.out.println("BANDA-NOME INTEGRANTE");
+                    while (rs.next()) {
+                    System.out.println(rs.getString("BANDA") + "-"
+                            + rs.getString("NOME_INTEGRANTE")
+                            );
+		    }
+		    }
                     break;
                     
                 case "EmailsBanda":
+                    System.out.println("BANDA-EMAIL");
                     
+                    rs = selectFunctions.emailsBandaAll(stmt, conn);
+                    while (rs.next()) {
+                    System.out.println(rs.getString("BANDA") + "-"
+                            + rs.getString("EMAIL")
+                            );
+		    }
+                    
+                    System.out.println("Deseja ordenar? (S/N)");
+                    ord = EntradaTeclado.leString();
+                    if(ord.equals("S")){
+                        
+                    System.out.println("Deseja ordenar por 'Banda' ou 'Email'?");
+                        att = EntradaTeclado.leString();
+                        
+                        System.out.println("Crescente 'C' ou Decrescente 'D'?");
+                        aux = EntradaTeclado.leString();
+                        
+                        if(aux.equals("C")) tipo_ord = true;
+                        else tipo_ord = false;
+                        
+		    rs = selectFunctions.chooseSelectionOrder(stmt, conn, table, tipo_ord, att);
+		    System.out.println("BANDA-EMAIL");
+                    while (rs.next()) {
+                    System.out.println(rs.getString("BANDA") + "-"
+                            + rs.getString("EMAIL")
+                            );
+		    }
+		    }
                     break;
                            
                 case "TelefonesBanda":
-                   
+                   System.out.println("BANDA-TELEFONE");
+                    
+                    rs = selectFunctions.telefonesBandaAll(stmt, conn);
+                    while (rs.next()) {
+                    System.out.println(rs.getString("BANDA") + "-"
+                            + rs.getString("TELEFONE")
+                            );
+		    }
+                    
+                    System.out.println("Deseja ordenar? (S/N)");
+                    ord = EntradaTeclado.leString();
+                    if(ord.equals("S")){
+                        
+                    //System.out.println("Deseja ordenar por 'TelefonesBanda'?");
+                        //att = EntradaTeclado.leString();
+                        
+                        System.out.println("Crescente 'C' ou Decrescente 'D'?");
+                        aux = EntradaTeclado.leString();
+                        
+                        if(aux.equals("C")) tipo_ord = true;
+                        else tipo_ord = false;
+                        
+		    rs = selectFunctions.chooseSelectionOrder(stmt, conn, table, tipo_ord, att);
+		    System.out.println("BANDA-TELEFONE");
+		    while (rs.next()) {
+                    System.out.println(rs.getString("BANDA") + "-"
+                            + rs.getString("TELEFONE")
+                            );
+		    }
+		    }
                    break;
                    
                 case "BandaSeApresenta":
-                   
+		    System.out.println("DATA_EVENTO-BANDA-HORA_INI-HORA_FIM");
+                    
+                    rs = selectFunctions.bandaSeApresentaAll(stmt, conn);
+                    while (rs.next()) {
+                    System.out.println(rs.getDate("DATA_EVENTO") + "-"
+                            + rs.getString("BANDA") + "-"
+                            + rs.getDate("HORA_INI") + "-"
+                            + rs.getDate("HORA_FIM")                            
+                            );
+		    }
+                    
+                    System.out.println("Deseja ordenar? (S/N)");
+                    ord = EntradaTeclado.leString();
+                    if(ord.equals("S")){
+                        
+                    //System.out.println("Deseja ordenar por 'TelefonesBanda'?");
+                        //att = EntradaTeclado.leString();
+                        
+                        System.out.println("Crescente 'C' ou Decrescente 'D'?");
+                        aux = EntradaTeclado.leString();
+                        
+                        if(aux.equals("C")) tipo_ord = true;
+                        else tipo_ord = false;
+                        
+		    rs = selectFunctions.chooseSelectionOrder(stmt, conn, table, tipo_ord, att);
+		    System.out.println("DATA_EVENTO-BANDA-HORA_INI-HORA_FIM");
+                    while (rs.next()) {
+                    System.out.println(rs.getDate("DATA_EVENTO") + "-"
+                            + rs.getString("BANDA") + "-"
+                            + rs.getDate("HORA_INI") + "-"
+                            + rs.getDate("HORA_FIM")                            
+                            );
+		    }
+		    }
                     break;
                     
                 case "TelefonesFotografia":
-                   
+		    System.out.println("FOTGRF-TELEFONE");
+                    
+                    rs = selectFunctions.telefonesFotografiaAll(stmt, conn);
+                    while (rs.next()) {
+                    System.out.println(rs.getString("FOTGRF") + "-"
+                            + rs.getString("TELEFONE")
+                            );
+		    }
+                    
+                    System.out.println("Deseja ordenar? (S/N)");
+                    ord = EntradaTeclado.leString();
+                    if(ord.equals("S")){
+                        
+                    System.out.println("Deseja ordenar por 'Fotografia' ou 'Telefone'?");
+                        att = EntradaTeclado.leString();
+                        
+                        System.out.println("Crescente 'C' ou Decrescente 'D'?");
+                        aux = EntradaTeclado.leString();
+                        
+                        if(aux.equals("C")) tipo_ord = true;
+                        else tipo_ord = false;
+                        
+		    rs = selectFunctions.chooseSelectionOrder(stmt, conn, table, tipo_ord, att);
+		    System.out.println("FOTGRF-TELEFONE");
+		    while (rs.next()) {
+                    System.out.println(rs.getString("FOTGRF") + "-"
+                            + rs.getString("TELEFONE")
+                            );
+		    }
+		    }
                     break;
                     
                 case "EmailsFotografia":
-                   
+		    System.out.println("FOTGRF-EMAIL");
+                    
+                    rs = selectFunctions.emailsFotografiaAll(stmt, conn);
+                    while (rs.next()) {
+                    System.out.println(rs.getString("FOTGRF") + "-"
+		            + rs.getString("EMAIL")
+                            );
+		    }
+                    
+                    System.out.println("Deseja ordenar? (S/N)");
+                    ord = EntradaTeclado.leString();
+                    if(ord.equals("S")){
+                        
+                    System.out.println("Deseja ordenar por 'Fotografia' ou 'Email'?");
+                        att = EntradaTeclado.leString();
+                        
+                        System.out.println("Crescente 'C' ou Decrescente 'D'?");
+                        aux = EntradaTeclado.leString();
+                        
+                        if(aux.equals("C")) tipo_ord = true;
+                        else tipo_ord = false;
+                        
+		    rs = selectFunctions.chooseSelectionOrder(stmt, conn, table, tipo_ord, att);
+		    System.out.println("FOTGRF-EMAIL");
+		    while (rs.next()) {
+                    System.out.println(rs.getString("FOTGRF") + "-"
+                            + rs.getString("EMAIL")
+                            );
+		    }
+		    }
                    break;
                    
                 case "Fotografia":
-                   
+		    System.out.println("CNPJ-NRO FOTOGRAFOS-NOME EQUIPE-TIPO");
+		    
+                    rs = selectFunctions.fotografiaAll(stmt, conn);
+                    while (rs.next()) {
+                    System.out.println(rs.getString("CNPJ") + "-"
+                            + rs.getInt("NRO_FOTOGRAFOS") + "-"
+                            + rs.getString("NOME_EQUIPE") + "-"
+                            + rs.getString("TIPO")
+                            );
+		    }
+                    
+                    System.out.println("Deseja ordenar? (S/N)");
+                    ord = EntradaTeclado.leString();
+                    if(ord.equals("S")){
+                        
+                    System.out.println("Deseja ordenar por 'CNPJ' ou 'NFotografos' ou 'NomeEquipe' ou 'Tipo'?");
+                        att = EntradaTeclado.leString();
+                        
+                        System.out.println("Crescente 'C' ou Decrescente 'D'?");
+                        aux = EntradaTeclado.leString();
+                        
+                        if(aux.equals("C")) tipo_ord = true;
+                        else tipo_ord = false;
+                        
+		    rs = selectFunctions.chooseSelectionOrder(stmt, conn, table, tipo_ord, att);
+		    System.out.println("CNPJ-NRO FOTOGRAFOS-NOME EQUIPE-TIPO");
+		    while (rs.next()) {
+                    System.out.println(rs.getString("CNPJ") + "-"
+                            + rs.getInt("NRO_FOTOGRAFOS") + "-"
+                            + rs.getString("NOME_EQUIPE") + "-"
+                            + rs.getString("TIPO")
+                            );
+		    }
+		    }
                     break;
                    
                 case "Evento":
-                   
+		    System.out.println("DATA-FOTOGRAFIA-NRO CASA FESTAS-CEP CASA FESTAS-TIPO");
+		    
+                    rs = selectFunctions.eventoAll(stmt, conn);
+                    while (rs.next()) {
+                    System.out.println(rs.getDate("DATA") + "-"
+                            + rs.getString("FOTOGRAFIA") + "-"
+                            + rs.getInt("NRO_CASA_FESTAS") + "-"
+                            + rs.getString("CEP_CASA_FESTAS") + "-"
+                            + rs.getString("TIPO")
+                            );
+		    }
+                    
+                    System.out.println("Deseja ordenar? (S/N)");
+                    ord = EntradaTeclado.leString();
+                    if(ord.equals("S")){
+                        
+                    //System.out.println("Deseja ordenar por 'CNPJ' ou 'NFotografos' ou 'NomeEquipe' ou 'Tipo'?");
+                        //att = EntradaTeclado.leString();
+                        
+                        System.out.println("Crescente 'C' ou Decrescente 'D'?");
+                        aux = EntradaTeclado.leString();
+                        
+                        if(aux.equals("C")) tipo_ord = true;
+                        else tipo_ord = false;
+                        
+		    rs = selectFunctions.chooseSelectionOrder(stmt, conn, table, tipo_ord, att);
+		    System.out.println("DATA-FOTOGRAFIA-NRO CASA FESTAS-CEP CASA FESTAS-TIPO");
+		    while (rs.next()) {
+                    System.out.println(rs.getDate("DATA") + "-"
+                            + rs.getString("FOTOGRAFIA") + "-"
+                            + rs.getInt("NRO_CASA_FESTAS") + "-"
+                            + rs.getString("CEP_CASA_FESTAS") + "-"
+                            + rs.getString("TIPO")
+                            );
+		    }
+		    }
                     break;
                   
                 case "CasaDeFestas":

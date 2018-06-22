@@ -18,16 +18,8 @@ public class selectFunctions {
         
         try{
             stmt = c.createStatement();
-                rs = stmt.executeQuery("SELECT * FROM FORMATURA");
-                while (rs.next()) {
-                    System.out.println(rs.getString("DATA") + "-"
-                            + rs.getString("ESCOLA") + "-"
-                            + rs.getString("NOME_CERIMONIALISTA_MISSA")+ "-"
-                            + rs.getString("NRO_CONVIDADOS") + "-"
-                            + rs.getString("DATA_COLACAO")                         
-                            );
-                }
-                System.out.println("SELECT COMPLETO");
+            rs = stmt.executeQuery("SELECT * FROM FORMATURA");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -123,7 +115,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM BANDA");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -172,7 +164,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM BANDA_SE_APRESENTA");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -204,7 +196,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM CASA_FESTAS");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -287,7 +279,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM CASAL");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -302,7 +294,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM CASAMENTO");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -317,7 +309,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM CER_N_RELIGIOSA");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -332,7 +324,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM CER_RELIGIOSA");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -347,7 +339,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM CONVIDADOS_MESA");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -362,7 +354,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM DECORA");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -394,7 +386,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM DECORADORA");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -443,7 +435,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM EMAILS_BANDA");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -492,7 +484,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM EMAILS_DECORADORA");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -541,7 +533,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM EMAILS_FOTOGRAFIA");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -590,7 +582,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM ESCOLA");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -623,7 +615,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM ESTILOS_BANDA");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -672,7 +664,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM EVENTO");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -704,7 +696,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM FORMATURA_TEM_ATREXTRA");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -753,7 +745,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM FOTOGRAFIA");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -836,7 +828,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM INTEGRANTES_BANDA");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -885,7 +877,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM LISTA_FORMANDOS");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -934,7 +926,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM MESA");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -949,7 +941,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM PARANINFO");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -998,7 +990,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM PARANINFO_FORMATURA");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -1047,7 +1039,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM PRESENTE");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -1062,7 +1054,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM SITES_PRESENTE");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -1077,7 +1069,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM TELEFONES_BANDA");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -1109,7 +1101,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM TELEFONES_DECORADORA");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -1158,7 +1150,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM TELEFONES_FOTOGRAFIA");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -1207,7 +1199,7 @@ public class selectFunctions {
             stmt = c.createStatement();
                 rs = stmt.executeQuery("SELECT * FROM TEMPLO_RELIGIOSO");
                 
-                System.out.println("SELECT COMPLETO");
+                
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());

@@ -1231,7 +1231,7 @@ public class selectFunctions {
             rs = stmt.executeQuery("SELECT EXTRACT(MONTH FROM F.DATA) AS \"Mes\", COUNT(*)\n" +
                                         "FROM FORMATURA F\n" +
                                         "GROUP BY EXTRACT(MONTH FROM F.DATA)\n" +
-                                        "ORDER BY EXTRACT(MONTH FROM F.DATA);");
+                                        "ORDER BY EXTRACT(MONTH FROM F.DATA)");
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -1256,7 +1256,7 @@ public class selectFunctions {
                                     "FROM FOTOGRAFIA FT, EVENTO EV\n" +
                                     "WHERE EV.FOTOGRAFIA = FT.CNPJ AND\n" +
                                     "        EXTRACT(MONTH FROM EV.DATA) = '02'\n" +
-                                    "GROUP BY FT.TIPO;");
+                                    "GROUP BY FT.TIPO");
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -1280,7 +1280,7 @@ public class selectFunctions {
             rs = stmt.executeQuery("SELECT FO.ESCOLA AS \"Escola\", FT.NOME_EQUIPE AS \"Equipe\", CS.NOME AS \"CasaFesta\"\n" +
                                     "FROM EVENTO EV, FOTOGRAFIA FT, CASA_FESTAS CS, FORMATURA FO\n" +
                                     "WHERE EV.DATA = FO.DATA AND EV.FOTOGRAFIA = FT.CNPJ AND EV.NRO_CASA_FESTAS = CS.NRO AND EV.CEP_CASA_FESTAS = CS.CEP\n" +
-                                    "ORDER BY FO.ESCOLA;");
+                                    "ORDER BY FO.ESCOLA");
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -1303,7 +1303,7 @@ public class selectFunctions {
             stmt = c.createStatement();
             rs = stmt.executeQuery("SELECT *\n" +
                                     "FROM FORMATURA F\n" +
-                                    "WHERE F.DATA < F.DATA_COLACAO;");
+                                    "WHERE F.DATA < F.DATA_COLACAO");
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -1329,7 +1329,7 @@ public class selectFunctions {
                                     "                    ON EV.DATA = FO.DATA)\n" +
                                     "LEFT JOIN FOTOGRAFIA FT\n" +
                                     "ON FT.CNPJ = EV.FOTOGRAFIA\n" +
-                                    "ORDER BY EV.DATA;");
+                                    "ORDER BY EV.DATA");
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -1354,7 +1354,7 @@ public class selectFunctions {
                                     "FROM EVENTO EV, CASA_FESTAS CF\n" +
                                     "WHERE EV.CEP_CASA_FESTAS = CF.CEP AND EV.NRO_CASA_FESTAS = CF.NRO AND UPPER(EV.TIPO) = 'FORMATURA' AND EXTRACT(YEAR FROM EV.DATA) = '2018'\n" +
                                     "GROUP BY CF.NOME \n" +
-                                    "HAVING COUNT(*) > 1;");
+                                    "HAVING COUNT(*) > 1");
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
@@ -1378,7 +1378,7 @@ public class selectFunctions {
             rs = stmt.executeQuery("SELECT DR.NOME AS \"Decor\", COUNT(*) AS \"Qtd\"\n" +
                                     "FROM EVENTO EV, DECORA DA, DECORADORA DR\n" +
                                     "WHERE EV.DATA = DA.DATA_EVENTO AND DA.DECORADORA = DR.CNPJ\n" +
-                                    "GROUP BY DR.NOME;");
+                                    "GROUP BY DR.NOME");
         } catch(Exception e){
             System.out.println("SELECT PROBLEM");
             System.out.println(e.getMessage());
